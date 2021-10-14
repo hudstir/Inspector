@@ -1,5 +1,14 @@
+TUTORIAL:
+
+Step 1:
 Copy and paste this into the URL of any bookmark:
 
 var currentElement=document.body,tempBorder="none";const textElements=["P","A","H","H1","H2","H3","H4","H5","H6","CODE","SPAN"];var i_enabled=!1,enableKey="[";alert('Inspector has activated! Use "[" to toggle it!\n\nChange the keybind with "\\".\n\n~ SilasDevs 2021 ~'),document.addEventListener("mouseover",function(e){currentElement.style.border=tempBorder,currentElement=e.target,tempBorder=e.target.style.border,i_enabled&&(currentElement.style.border="1px solid #FF0000")}),document.onclick=function(e){i_enabled&&(textElements.includes(currentElement.nodeName)?currentElement.innerHTML=prompt("New text:"):"IMG"==currentElement.nodeName?currentElement.src=prompt("Insert image URL:"):currentElement.innerHTML=prompt("Enter new HTML:"))},window.addEventListener("keydown",function(e){e.key==enableKey?(i_enabled=!i_enabled)?alert("Activated selection mode!"):alert("Disabled selection mode!"):"\\"==e.key&&(enableKey=prompt("Change keybind:")[0].toLowerCase())});
+
+Step 2:
+Click "Done" and go to any website.
+
+Step 3:
+Click the bookmark and enjoy!
 
 Thanks for using Inspector!
