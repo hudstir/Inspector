@@ -1,10 +1,8 @@
-// This code probably isn't good but it works. ._.
-
 var currentElement = document.body;
 var tempBorder = "none";
 const textElements = ["P", "A", "H", "H1", "H2", "H3", "H4", "H5", "H6", "CODE", "SPAN"]
 var i_enabled = false
-var enableKey = "["
+var i_enableKey = "["
 
 alert('Inspector has activated! Use "[" to toggle it!\n\nChange the keybind with "\\".\n\n~ SilasDevs 2021 ~')
 
@@ -31,7 +29,7 @@ document.onclick = function(event) {
 }
 
 window.addEventListener('keydown', function (e) {
-    if (e.key == enableKey) {
+    if (e.key == i_enableKey) {
         i_enabled = !i_enabled
 
         if (i_enabled) {
@@ -40,6 +38,6 @@ window.addEventListener('keydown', function (e) {
             alert("Disabled selection mode!")
         }
     } else if (e.key == "\\") {
-         enableKey = prompt("Change keybind:")[0].toLowerCase()   
+         i_enableKey = prompt("Change keybind:")[0].toLowerCase()   
     }
 });
