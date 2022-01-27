@@ -1,7 +1,7 @@
 var i_enabled = false
 var i_enableKey = "["
 
-alert('Inspector has activated! Use "[" to toggle it!\n\nChange the keybind with "\\".\n\n~ SilasDevs 2021 ~')
+alert('Inspector has activated! Use "[" to toggle it!\n\nChange the keybind with "\\".\n\n~ SilasDevs 2021 V2.0 ~')
 
 window.addEventListener('keydown', function (e) {
     if (e.key == i_enableKey) {
