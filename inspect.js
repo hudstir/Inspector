@@ -27,6 +27,7 @@ var css = `
   border-left: solid lime;
   border-radius: 3px;
   opacity: 1;
+  z-index: 99999999999;
   transition: opacity 200ms;
 }
 
