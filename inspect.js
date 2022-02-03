@@ -26,7 +26,7 @@ var css = `
   padding: 5px;
   border-left: solid lime;
   border-radius: 3px;
-  opacity: 1;
+  opacity: 0;
   z-index: 99999999999;
   transition: opacity 200ms;
 }
@@ -45,10 +45,12 @@ style.appendChild(document.createTextNode(css));
 var alert = document.createElement('div')
 var span = document.createElement('span')
 alert.classList.add('inspector-alert')
-span.innerText = "Inspector V2.1 by SilasDevs"
+span.innerText = "Inspector V2.1 has loaded! | SilasDeca"
 alert.appendChild(span)
 
 document.body.appendChild(alert)
+
+alert.style.opacity = 1
 
 setTimeout(function() {
   alert.style.opacity = 0
