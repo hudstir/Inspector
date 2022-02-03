@@ -45,7 +45,7 @@ style.appendChild(document.createTextNode(css));
 var alert = document.createElement('div')
 var span = document.createElement('span')
 alert.classList.add('inspector-alert')
-span.innerText = "Inspector V2.1 has loaded! | SilasDeca"
+span.innerText = "Inspector V2.1 has loaded! | Silasssssss"
 alert.appendChild(span)
 
 document.body.appendChild(alert)
