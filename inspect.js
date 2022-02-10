@@ -7,8 +7,10 @@ window.addEventListener('keydown', function (e) {
 
         if (i_enabled) {
             document.body.setAttribute("contenteditable", true)
+            sendAlert("✅ Enabled editing!", "lime")
         } else {
             document.body.setAttribute("contenteditable", false)
+            sendAlert("❌ Disabled editing!", "red")
         }
     } else if (e.key == "\\") {
          i_enableKey = prompt("Change keybind:")[0].toLowerCase()   
@@ -16,46 +18,44 @@ window.addEventListener('keydown', function (e) {
 });
 
 var css = `
-.inspector-alert {
+.bugzapper-alert {
   display: flex;
   position: fixed;
   top: 10px;
   left: 10px;
-  background-color: white;
+  background-color: #404040;
   align-items: center;
-  padding: 5px;
-  border-left: solid lime;
+  padding: 7px 8px 7px 5px;
+  border-left: solid red;
   border-radius: 3px;
-  opacity: 0;
+  opacity: 1;
   z-index: 99999999999;
   transition: opacity 200ms;
 }
-
-.inspector-alert span {
+.bugzapper-alert span {
   text-align: center;
-  color: black;
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 `
-var style = document.createElement('style');
-document.head.appendChild(style)
-style.type = 'text/css';
-style.appendChild(document.createTextNode(css));
 
-var alert = document.createElement('div')
-var span = document.createElement('span')
-alert.classList.add('inspector-alert')
-span.innerText = "Inspector V2.1 has loaded! | Silasssssss"
-alert.appendChild(span)
+function sendAlert(text, color) {
+  var style = document.createElement('style');
+  document.head.appendChild(style)
+  style.type = 'text/css';
+  style.appendChild(document.createTextNode(css));
 
-document.body.appendChild(alert)
+  var alert = document.createElement('div')
+  alert.style = "border-left: solid " + color
+  var span = document.createElement('span')
+  alert.classList.add('bugzapper-alert')
+  span.innerText = text
+  alert.appendChild(span)
 
-alert.style.opacity = 1
+  document.body.appendChild(alert)
+  
+  setTimeout(function() {alert.style.opacity = 0}, 3000)
+  setTimeout(function() {alert.remove()}, 3200)
+}
 
-setTimeout(function() {
-  alert.style.opacity = 0
-  setTimeout(function() {
-    alert.remove()
-  }, 200)
-}, 5000)
-
+sendAlert("🔎 Inspector activated!\nUse [ to toggle it.", "lime")
