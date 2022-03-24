@@ -1,4 +1,4 @@
-var i_enabled = false
+javascript: var i_enabled = false
 var i_enableKey = "["
 
 window.addEventListener('keydown', function (e) {
